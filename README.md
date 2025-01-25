@@ -16,6 +16,8 @@ Using a `@click.command()` decorator, converts the function into a cli-command.
 
 4. run command by `python <filename.py> <command-name>`.
 
+By providing docstrings for commands, it displays on --help command.
+
 ## Adding options
 You can add some options to command. 
 ```python
@@ -34,4 +36,19 @@ Type defines the type of parameters and it typecast them itself.
 Nargs is the count of acceptable values for that option and its default value is 1.
 
 As you may guess, we can have multiple options too. As we can pass it with multiple duplicate options. 
+## Adding arquments
+You can add some options to command. 
+```python
+@click.argument(ARGUMENT_NAME, default=DEFAULT_VALUE, type=TYPE)
+```
+
+The difference between options and arguments, is arguments are nessecory. 
+
+If not enough arguments are provided, you got `Error: Missing Argument`.
+
+Type defines the type of parameters and it typecasts them itself.
+
+
+## Tips
+if nargs is negative, it means you can have as many as you want.
 
